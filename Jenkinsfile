@@ -7,18 +7,18 @@ pipeline {
             steps {
                 // Jenkins automatically pulls the latest code from your Git branch
                 checkout scm
-                echo '✅ Code pulled successfully.'
+                echo ' Code pulled successfully.'
             }
         }
 
         stage('Run Automated Tests') {
             steps {
                 echo '🧪 Running Pytest...'
-                // We create a temporary virtual environment to run tests safely
                 sh '''
                 python3 -m venv venv
-                source venv/bin/activate
+                . venv/bin/activate
                 pip install -r requirements.txt
+                pip install pytest httpx  # Added httpx because FastAPI tests need it
                 pytest test_main.py
                 '''
             }
@@ -34,21 +34,21 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo '🚀 Deploying the container...'
-                // 1. Stop and remove the old container if it exists
+
                 sh 'docker stop api-container || true'
                 sh 'docker rm api-container || true'
 
-                // 2. Run the new, updated container in the background (-d)
+
                 sh 'docker run -d -p 8000:8000 --name api-container real-estate-api:latest'
                 echo '🎉 Deployment Successful! API is live on port 8000.'
             }
         }
     }
 
-    // This section runs after the pipeline finishes, whether it succeeds or fails
+
     post {
         failure {
-            echo '❌ Pipeline failed! Check the logs.'
+            echo ' Pipeline failed! Check the logs.'
         }
     }
 }
