@@ -1,7 +1,7 @@
 
 FROM python:3.10-slim
 
-# 2. Set the working directory inside the container
+
 WORKDIR /app
 
 # 3. Copy only the requirements first to cache the dependencies
