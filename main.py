@@ -2,10 +2,10 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 
-# Initialize the FastAPI app
+
 app = FastAPI(title="Real Estate Predictor API")
 
-# Load the pre-trained model
+
 model = joblib.load('house_model.pkl')
 
 
