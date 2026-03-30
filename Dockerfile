@@ -1,5 +1,4 @@
-# 1. Use an official, lightweight Python image
-# We use 'slim' to keep the container size small and fast on your Mac
+
 FROM python:3.10-slim
 
 # 2. Set the working directory inside the container
