@@ -1,11 +1,10 @@
 pipeline {
-    // This tells Jenkins it can run on your local Mac's Jenkins setup
     agent any
 
     stages {
         stage('Checkout Code') {
             steps {
-                // Jenkins automatically pulls the latest code from your Git branch
+
                 checkout scm
                 echo ' Code pulled successfully.'
             }
