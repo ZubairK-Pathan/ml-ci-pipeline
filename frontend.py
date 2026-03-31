@@ -1,10 +1,9 @@
 import streamlit as st
 import requests
 
-# Page config
-st.set_page_config(page_title="Home Price Estimator", page_icon="🏡", layout="centered")
 
-# Header
+st.set_page_config(page_title="This is testing", page_icon="🏡", layout="centered")
+
 st.markdown("""
 <h1 style='text-align: center;'>🏡 Home Price Estimator</h1>
 <p style='text-align: center; color: grey;'>
@@ -14,7 +13,7 @@ Get a quick estimate of your property's value based on key details.
 
 st.divider()
 
-# Input section
+
 st.subheader("Property Details")
 
 col1, col2 = st.columns(2)
@@ -28,10 +27,10 @@ with col2:
 
 st.divider()
 
-# Button
+
 predict = st.button("Estimate Price")
 
-# Prediction
+
 if predict:
     with st.spinner("Calculating estimate..."):
 
