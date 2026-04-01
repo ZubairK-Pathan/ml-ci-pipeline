@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 
-st.set_page_config(page_title="This is testing", page_icon="🏡", layout="centered")
+st.set_page_config(page_title="Home Price Estimator ", page_icon="🏡", layout="centered")
 
 st.markdown("""
 <h1 style='text-align: center;'>🏡 Home Price Estimator</h1>
