@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 
-st.set_page_config(page_title="This is testing", page_icon="🏢", layout="centered")
+st.set_page_config(page_title="Property Valuation Tool", page_icon="🏢", layout="centered")
 
 
 st.markdown("""

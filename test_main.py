@@ -8,7 +8,7 @@ client = TestClient(app)
 def test_health_check():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"status": "healthy", "message": "API is running!"}
+    assert response.json() == {"status": "healthy", "message": "This is testing"}
 
 
 def test_predict_price():
