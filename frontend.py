@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 
-st.set_page_config(page_title="Property Valuation Tool", page_icon="🏢", layout="centered")
+st.set_page_config(page_title="This is testing", page_icon="🏢", layout="centered")
 
 
 st.markdown("""
@@ -44,7 +44,7 @@ with col1:
     sq_ft = st.number_input("Square Footage", min_value=500, max_value=10000, value=1500, step=100)
     age = st.number_input("Property Age (Years)", min_value=0, max_value=150, value=10, step=1)
 
-    st.markdown("<br>", unsafe_allow_html=True)  # Add a little spacing
+    st.markdown("<br>", unsafe_allow_html=True)
     submit = st.button("Calculate Valuation")
 
 with col2:
